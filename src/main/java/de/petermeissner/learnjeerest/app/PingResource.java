@@ -1,4 +1,4 @@
-package de.petermeissner.learnjeerest;
+package de.petermeissner.learnjeerest.app;
 
 import com.google.gson.Gson;
 
@@ -22,7 +22,7 @@ public class PingResource {
     }
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String index() {
+    public java.lang.String index() {
         return gson.toJson(new Ping());
     }
 }

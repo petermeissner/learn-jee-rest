@@ -1,4 +1,4 @@
-package de.petermeissner.learnjeerest;
+package de.petermeissner.learnjeerest.app;
 
 import javax.ws.rs.ApplicationPath;
 
