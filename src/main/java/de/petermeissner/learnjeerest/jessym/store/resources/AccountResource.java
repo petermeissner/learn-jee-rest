@@ -1,17 +1,17 @@
 package de.petermeissner.learnjeerest.jessym.store.resources;
 
 import de.petermeissner.learnjeerest.jessym.store.model.Account;
+import de.petermeissner.learnjeerest.jessym.store.model.AccountRegisterRequest;
 import de.petermeissner.learnjeerest.jessym.store.model.AccountResult;
+import jakarta.validation.Valid;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/accounts")
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class AccountResource {
 
     @GET
@@ -42,4 +42,12 @@ public class AccountResource {
         return account;
     }
 
+    @POST
+    public Account register(@Valid AccountRegisterRequest request) {
+        Account account = new Account();
+        account.setId(1L);
+        account.setName(request.getName());
+        account.setEmail(request.getEmail());
+        return account;
+    }
 }
